@@ -54,6 +54,7 @@ export default {
         leki: {
           glow: "hsl(var(--leki-glow))",
           dark: "hsl(var(--leki-dark))",
+          silver: "hsl(var(--leki-silver))",
         },
       },
       borderRadius: {
