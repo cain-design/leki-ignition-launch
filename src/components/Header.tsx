@@ -9,8 +9,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Menu, X, Zap } from "lucide-react";
+import { ShoppingCart, Minus, Plus, Trash2, ExternalLink, Loader2, Menu, X } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import lekiLogo from "@/assets/leki-logo.png";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,9 +21,12 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
-            <Zap className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold tracking-tight">LEKI</span>
+          <a href="/" className="flex items-center">
+            <img 
+              src={lekiLogo} 
+              alt="LEKI" 
+              className="h-8 md:h-10 w-auto invert brightness-200"
+            />
           </a>
 
           {/* Desktop Navigation */}
