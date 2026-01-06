@@ -3,8 +3,8 @@ import { Zap, Shield, Battery, Volume2, Sparkles } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Video Background */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Video Background - Full screen */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
@@ -15,13 +15,9 @@ export function HeroSection() {
         >
           <source src="/videos/leki-hero.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+        {/* Subtle gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/20" />
       </div>
-      
-      {/* Animated silver glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[100px] animate-pulse z-[1]" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[80px] animate-pulse animation-delay-500 z-[1]" />
       
       {/* Sparkle particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
