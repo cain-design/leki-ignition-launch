@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -138,25 +139,29 @@ function ProductCard({ product, onAddToCart, featured }: ProductCardProps) {
       )}
       
       <CardContent className="p-6">
-        {/* Product image */}
-        <div className="relative aspect-[4/3] mb-6 rounded-lg overflow-hidden bg-secondary">
-          {imageUrl ? (
-            <img
-              src={imageUrl}
-              alt={product.node.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <Zap className="h-16 w-16 text-primary/30" />
-            </div>
-          )}
-        </div>
+        {/* Product image - clickable */}
+        <Link to={`/product/${product.node.handle}`}>
+          <div className="relative aspect-[4/3] mb-6 rounded-lg overflow-hidden bg-secondary cursor-pointer">
+            {imageUrl ? (
+              <img
+                src={imageUrl}
+                alt={product.node.title}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                <Zap className="h-16 w-16 text-primary/30" />
+              </div>
+            )}
+          </div>
+        </Link>
 
         {/* Product info */}
         <div className="space-y-4">
           <div>
-            <h3 className="text-xl font-bold mb-1">{product.node.title}</h3>
+            <Link to={`/product/${product.node.handle}`}>
+              <h3 className="text-xl font-bold mb-1 hover:text-primary transition-colors">{product.node.title}</h3>
+            </Link>
             <p className="text-muted-foreground text-sm line-clamp-2">
               {product.node.description || (is10000W 
                 ? "The beast. Maximum power for experienced riders who want it all."
@@ -184,14 +189,19 @@ function ProductCard({ product, onAddToCart, featured }: ProductCardProps) {
               <Button
                 variant="outline"
                 size="icon"
-                onClick={() => onAddToCart(product)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onAddToCart(product);
+                }}
                 className="hover:bg-primary hover:text-primary-foreground"
               >
                 <ShoppingCart className="h-4 w-4" />
               </Button>
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-                Configure
-              </Button>
+              <Link to={`/product/${product.node.handle}`}>
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  View Details
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
