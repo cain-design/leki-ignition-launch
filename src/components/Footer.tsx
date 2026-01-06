@@ -101,7 +101,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="/affiliate" className="text-muted-foreground hover:text-foreground transition-colors">
                   Become an Affiliate
                 </a>
               </li>

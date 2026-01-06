@@ -204,7 +204,7 @@ export default function ProductDetail() {
                 </div>
                 <div className="text-center">
                   <Shield className="h-6 w-6 mx-auto mb-2 text-primary" />
-                  <div className="font-bold">2 Year</div>
+                  <div className="font-bold">3 Year</div>
                   <div className="text-sm text-muted-foreground">Warranty</div>
                 </div>
               </div>
@@ -288,7 +288,7 @@ export default function ProductDetail() {
               <div className="grid grid-cols-2 gap-4 pt-6">
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <Check className="h-5 w-5 text-primary" />
-                  Free shipping Australia-wide
+                  $750 flat rate shipping
                 </div>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <Check className="h-5 w-5 text-primary" />
@@ -296,7 +296,7 @@ export default function ProductDetail() {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <Check className="h-5 w-5 text-primary" />
-                  Charge at home
+                  3 year warranty included
                 </div>
                 <div className="flex items-center gap-3 text-sm text-muted-foreground">
                   <Check className="h-5 w-5 text-primary" />

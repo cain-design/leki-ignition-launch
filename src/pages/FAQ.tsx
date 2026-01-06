@@ -18,7 +18,7 @@ const faqs = [
       },
       {
         q: "What's included when I purchase a LEKI?",
-        a: "Every LEKI comes with the bike, a portable charger, tool kit, owner's manual, and a 2-year comprehensive warranty. We also include a complimentary first service at 1,000km."
+        a: "Every LEKI comes with the bike, a portable charger, tool kit, owner's manual, and a 3-year comprehensive warranty. We also include a complimentary first service at 1,000km."
       },
       {
         q: "How do I charge my LEKI?",
@@ -52,7 +52,7 @@ const faqs = [
       },
       {
         q: "What warranty coverage is included?",
-        a: "All LEKI motorcycles come with a 2-year comprehensive warranty covering the motor, battery, controller, and all electrical components. The battery is warranted to retain at least 80% capacity for 5 years."
+        a: "All LEKI motorcycles come with a 3-year comprehensive warranty covering the motor, battery, controller, and all electrical components. The battery is warranted to retain at least 80% capacity for 5 years."
       },
       {
         q: "Where can I get my LEKI serviced?",
