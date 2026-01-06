@@ -1,36 +1,36 @@
 import { Badge } from "@/components/ui/badge";
-import { Zap, Volume2, Wrench, GraduationCap, Leaf, Gauge } from "lucide-react";
+import { Zap, Volume2, Plug, GraduationCap, Shield, Gauge } from "lucide-react";
 
 const benefits = [
   {
     icon: <Zap className="h-8 w-8" />,
-    title: "Instant Torque",
-    description: "Maximum power from the moment you twist the throttle. No lag, no waiting."
+    title: "INSTANT TORQUE. SILENT PULL.",
+    description: "Full torque from zero. Smooth, punchy acceleration. No revs. No waiting. This is the fun part."
   },
   {
     icon: <Volume2 className="h-8 w-8" />,
-    title: "Silent Power",
-    description: "Cruise through neighbourhoods without waking anyone. Pure, quiet performance."
+    title: "NO NOISE. ALL ATTITUDE.",
+    description: "Cruise through neighbourhoods without waking anyone. Your neighbours will wave, not complain."
   },
   {
-    icon: <Wrench className="h-8 w-8" />,
-    title: "Low Maintenance",
-    description: "No oil changes, no spark plugs, no clutch. Just charge and ride."
+    icon: <Plug className="h-8 w-8" />,
+    title: "CHARGE IT LIKE YOUR PHONE",
+    description: "No oil changes, no spark plugs, no fuel stops. Plug in at home. Charge overnight. Ride."
   },
   {
     icon: <GraduationCap className="h-8 w-8" />,
-    title: "Learner Approved",
-    description: "LAMS approved for new riders. Perfect for building your confidence."
+    title: "ANYONE CAN RIDE A LEKI",
+    description: "No clutch. No stalling. Twist & go. Easy in traffic. LAMS approved for new riders."
   },
   {
-    icon: <Leaf className="h-8 w-8" />,
-    title: "Zero Emissions",
-    description: "Ride guilt-free knowing you're not contributing to air pollution."
+    icon: <Shield className="h-8 w-8" />,
+    title: "BUILT FOR AUSSIE ROADS",
+    description: "ADR approved. VTA064802. Register it like any other bike. Ride it Australia-wide."
   },
   {
     icon: <Gauge className="h-8 w-8" />,
-    title: "Twist & Go",
-    description: "No gears to learn. Just twist the throttle and go. It's that simple."
+    title: "NOT A TOY. BUT LOTS OF FUN.",
+    description: "Up to 340 Nm motor torque. Top speed 140km/h+. This thing moves."
   }
 ];
 

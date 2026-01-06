@@ -5,8 +5,34 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShopifyProduct, fetchProducts } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
-import { ShoppingCart, Zap, Loader2 } from "lucide-react";
+import { ShoppingCart, Zap, Loader2, Battery, Gauge, Clock } from "lucide-react";
 import { toast } from "sonner";
+
+// Tech specs for each model
+const techSpecs: Record<string, {
+  topSpeed: string;
+  range: string;
+  power: string;
+  charge: string;
+  tagline: string;
+  torque?: string;
+}> = {
+  "5000W": {
+    topSpeed: "100 km/h",
+    range: "100-110 km",
+    power: "5kW Hub Motor",
+    charge: "4-6 hrs",
+    tagline: "The perfect entry. Powerful, efficient, and learner approved."
+  },
+  "10000W": {
+    topSpeed: "140 km/h",
+    range: "110-140 km",
+    power: "10kW Hub Motor",
+    charge: "4-6 hrs",
+    torque: "340 Nm",
+    tagline: "The beast. Maximum power for riders who want it all."
+  }
+};
 
 export function ProductShowcase() {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -77,7 +103,7 @@ export function ProductShowcase() {
             Choose Your <span className="text-gradient">LEKI</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Two powerful options. Same incredible ride. Both road legal and learner approved.
+            Two powerful options. Same incredible ride. Both road legal and LAMS approved.
           </p>
         </div>
 
@@ -129,6 +155,7 @@ function ProductCard({ product, onAddToCart, featured }: ProductCardProps) {
   const price = parseFloat(product.node.priceRange.minVariantPrice.amount);
   const imageUrl = product.node.images.edges[0]?.node.url;
   const is10000W = product.node.title.includes("10000W");
+  const specs = is10000W ? techSpecs["10000W"] : techSpecs["5000W"];
 
   return (
     <Card className={`group relative overflow-hidden bg-card border-border transition-all duration-300 hover:border-primary/50 ${featured ? 'ring-2 ring-primary' : ''}`}>
@@ -162,19 +189,35 @@ function ProductCard({ product, onAddToCart, featured }: ProductCardProps) {
             <Link to={`/product/${product.node.handle}`}>
               <h3 className="text-xl font-bold mb-1 hover:text-primary transition-colors">{product.node.title}</h3>
             </Link>
-            <p className="text-muted-foreground text-sm line-clamp-2">
-              {product.node.description || (is10000W 
-                ? "The beast. Maximum power for experienced riders who want it all."
-                : "The perfect entry. Powerful, efficient, and learner approved."
-              )}
+            <p className="text-muted-foreground text-sm">
+              {specs.tagline}
             </p>
           </div>
 
-          {/* Specs */}
+          {/* Technical Specs Grid */}
+          <div className="grid grid-cols-3 gap-3 py-4 border-y border-border">
+            <div className="text-center">
+              <Gauge className="h-4 w-4 text-primary mx-auto mb-1" />
+              <div className="text-sm font-semibold">{specs.topSpeed}</div>
+              <div className="text-xs text-muted-foreground">Top Speed</div>
+            </div>
+            <div className="text-center">
+              <Battery className="h-4 w-4 text-primary mx-auto mb-1" />
+              <div className="text-sm font-semibold">{specs.range}</div>
+              <div className="text-xs text-muted-foreground">Range</div>
+            </div>
+            <div className="text-center">
+              <Clock className="h-4 w-4 text-primary mx-auto mb-1" />
+              <div className="text-sm font-semibold">{specs.charge}</div>
+              <div className="text-xs text-muted-foreground">Charge</div>
+            </div>
+          </div>
+
+          {/* Specs badges */}
           <div className="flex flex-wrap gap-2">
-            <Badge variant="secondary">{is10000W ? "10kW Motor" : "5kW Motor"}</Badge>
-            <Badge variant="secondary">{is10000W ? "110km/h" : "90km/h"}</Badge>
-            <Badge variant="secondary">Learner Approved</Badge>
+            <Badge variant="secondary">{specs.power}</Badge>
+            {is10000W && <Badge variant="secondary">{specs.torque} Torque</Badge>}
+            <Badge variant="secondary">LAMS Approved</Badge>
           </div>
 
           {/* Price and CTA */}

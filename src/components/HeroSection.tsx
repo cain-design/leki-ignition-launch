@@ -45,21 +45,21 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 border border-primary/20 mb-8 animate-slide-up shimmer">
             <Shield className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-primary">ADR Approved • Road Legal • Australian Owned</span>
+            <span className="text-sm font-medium text-primary">ADR APPROVED • ROAD LEGAL • CHARGE AT HOME</span>
           </div>
           
-          {/* Main headline - commute focused */}
+          {/* Main headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-slide-up animation-delay-100">
-            <span className="text-chrome">Real Motorcycle.</span>
+            <span className="text-chrome">A REAL MOTORBIKE.</span>
             <br />
-            <span className="text-silver">Electric Commute.</span>
+            <span className="text-silver">JUST ELECTRIC.</span>
           </h1>
           
-          {/* Subtitle - commute benefits */}
+          {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-slide-up animation-delay-200">
-            Skip the traffic. Skip the petrol station. Skip the noise.
+            NO PETROL. NO GEARS. NO NOISE.
             <br />
-            <span className="text-primary font-medium">Silent, electric commuting</span> from just <span className="text-chrome font-semibold">$7,999</span>
+            <span className="text-primary font-medium">Just twist and go</span> from <span className="text-chrome font-semibold">$7,999</span>
           </p>
           
           {/* CTAs */}
@@ -83,8 +83,8 @@ export function HeroSection() {
           {/* Trust badges */}
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 animate-slide-up animation-delay-400">
             <TrustBadge icon={<Battery className="h-5 w-5" />} label="160km+ Range" />
-            <TrustBadge icon={<Zap className="h-5 w-5" />} label="4hr Fast Charge" />
-            <TrustBadge icon={<Volume2 className="h-5 w-5" />} label="Silent Commute" />
+            <TrustBadge icon={<Zap className="h-5 w-5" />} label="4hr Home Charge" />
+            <TrustBadge icon={<Volume2 className="h-5 w-5" />} label="Silent. Smooth. Fast." />
           </div>
         </div>
       </div>

@@ -4,6 +4,16 @@ export function Footer() {
   return (
     <footer className="bg-secondary/50 border-t border-border">
       <div className="container mx-auto px-4 py-16">
+        {/* Brand tagline */}
+        <div className="text-center mb-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-chrome mb-2">
+            AUSTRALIA'S BEST VALUE ELECTRIC MOTORBIKE
+          </h3>
+          <p className="text-muted-foreground">
+            Real power. Real range. Real savings.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-1">
@@ -114,8 +124,9 @@ export function Footer() {
           <div className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} LEKI Electric Motorbikes. All rights reserved.
           </div>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <span>ABN: XX XXX XXX XXX</span>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-muted-foreground">
+            <span>MVD333912</span>
+            <span>VTA064802</span>
             <span>Australian Owned & Operated</span>
           </div>
         </div>
