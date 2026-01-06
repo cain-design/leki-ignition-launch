@@ -4,16 +4,27 @@ import { Zap, Shield, Battery, Volume2, Sparkles } from "lucide-react";
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background gradient with metallic feel */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/30" />
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/leki-hero.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+      </div>
       
       {/* Animated silver glow orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[100px] animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[80px] animate-pulse animation-delay-500" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[100px] animate-pulse z-[1]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[80px] animate-pulse animation-delay-500 z-[1]" />
       
       {/* Sparkle particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
         {[...Array(6)].map((_, i) => (
           <Sparkles 
             key={i} 
@@ -79,7 +90,7 @@ export function HeroSection() {
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
         <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2">
           <div className="w-1.5 h-2.5 bg-primary rounded-full animate-pulse-glow" />
         </div>
