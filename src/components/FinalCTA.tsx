@@ -13,7 +13,7 @@ export function FinalCTA() {
         <div className="max-w-3xl mx-auto text-center">
           {/* Headline */}
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Ready to Ride <span className="text-gradient">Electric</span>?
+            NO FUEL. NO NOISE. <span className="text-gradient">ALL ATTITUDE.</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-10">
             Join the electric revolution. Build your LEKI today and experience the future of riding.
@@ -41,10 +41,10 @@ export function FinalCTA() {
           <div className="p-8 rounded-2xl bg-card border border-border">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Mail className="h-5 w-5 text-primary" />
-              <h3 className="text-lg font-semibold">Get The Bolt</h3>
+              <h3 className="text-lg font-semibold">WANT MORE INFO? GET THE BOLT.</h3>
             </div>
             <p className="text-muted-foreground mb-6">
-              Our monthly newsletter with updates, tips, and exclusive offers.
+              All things LEKI. Updates, tips, and exclusive offers. No spam. Ever.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input 

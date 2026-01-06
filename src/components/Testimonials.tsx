@@ -4,31 +4,45 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Michael R.",
+    name: "Mitch G.",
     location: "Sydney, NSW",
     rating: 5,
-    text: "Absolute game changer. I was skeptical about electric but the torque and power delivery is incredible. No more fuel costs and I love being able to charge at home.",
+    text: "Pulls Hard – Thought electric might feel soft. It's not. Sport mode is wild, you twist and it just goes.",
     bike: "E1 10000W"
   },
   {
     name: "Sarah T.",
     location: "Melbourne, VIC",
     rating: 5,
-    text: "Perfect for my daily commute. Silent, powerful, and so easy to ride. As a learner, the twist-and-go made learning so much less stressful.",
+    text: "Just twist and ride... smoother than my last scooter and twice as fun. No gears to worry about, just pure enjoyment.",
     bike: "E1 5000W"
   },
   {
-    name: "James K.",
+    name: "Chris L.",
     location: "Brisbane, QLD",
+    rating: 5,
+    text: "Surprisingly powerful. This bike moves. Sport mode is exactly what I needed for highway merging. The torque is instant.",
+    bike: "E1 10000W"
+  },
+  {
+    name: "Jess M.",
+    location: "Perth, WA",
+    rating: 5,
+    text: "Feels like the future is here. Neighbours used to complain about my old bike. Now they wave as I silently cruise past!",
+    bike: "E1 5000W"
+  },
+  {
+    name: "Alex B.",
+    location: "Adelaide, SA",
     rating: 5,
     text: "The build quality is fantastic. Australian roads can be tough but this thing handles everything. Customer service was excellent too.",
     bike: "E1 10000W"
   },
   {
     name: "Emma L.",
-    location: "Perth, WA",
+    location: "Gold Coast, QLD",
     rating: 5,
-    text: "Neighbours used to complain about my old bike. Now they wave as I silently cruise past. Plus I'm saving about $200 a month on fuel!",
+    text: "Perfect learner bike. No clutch, no stalling, just pure confidence. Saving about $200 a month on fuel is the cherry on top.",
     bike: "E1 5000W"
   }
 ];
@@ -39,12 +53,12 @@ export function Testimonials() {
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-12">
-          <Badge variant="outline" className="mb-4">Customer Reviews</Badge>
+          <Badge variant="outline" className="mb-4">Real Riders. Real Reviews.</Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Riders Love <span className="text-gradient">LEKI</span>
+            What Riders <span className="text-gradient">Say</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Join hundreds of happy riders across Australia.
+            Don't take our word for it. Hear from the LEKI community.
           </p>
         </div>
 
@@ -56,11 +70,11 @@ export function Testimonials() {
             ))}
           </div>
           <span className="text-lg font-medium">4.9 out of 5</span>
-          <span className="text-muted-foreground">from 21+ reviews</span>
+          <span className="text-muted-foreground">from 21+ verified riders</span>
         </div>
 
         {/* Testimonials grid */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card 
               key={index} 

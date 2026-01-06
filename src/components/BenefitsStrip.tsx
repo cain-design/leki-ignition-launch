@@ -1,10 +1,10 @@
 import { Battery, Clock, DollarSign, Car } from "lucide-react";
 
 const benefits = [
-  { icon: <Battery className="h-6 w-6" />, value: "160km+", label: "Daily Commute Range" },
-  { icon: <Clock className="h-6 w-6" />, value: "4hrs", label: "Overnight Charge" },
-  { icon: <DollarSign className="h-6 w-6" />, value: "$2.33", label: "Weekly Commute Cost" },
-  { icon: <Car className="h-6 w-6" />, value: "Zero", label: "Traffic Stress" },
+  { icon: <Battery className="h-6 w-6" />, value: "160km+", label: "Range. Done." },
+  { icon: <Clock className="h-6 w-6" />, value: "4hrs", label: "Plug in. Sleep. Ride." },
+  { icon: <DollarSign className="h-6 w-6" />, value: "$2.33", label: "Per Full Charge*" },
+  { icon: <Car className="h-6 w-6" />, value: "Lane", label: "Filter. Everywhere." },
 ];
 
 export function BenefitsStrip() {

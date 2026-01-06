@@ -4,10 +4,12 @@ import { BenefitsStrip } from "@/components/BenefitsStrip";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { VideoShowcase } from "@/components/VideoShowcase";
 import { WhyElectric } from "@/components/WhyElectric";
+import { TechSpecs } from "@/components/TechSpecs";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
 import { Testimonials } from "@/components/Testimonials";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -18,6 +20,7 @@ const Index = () => {
         <ProductShowcase />
         <VideoShowcase />
         <WhyElectric />
+        <TechSpecs />
         <SavingsCalculator />
         <Testimonials />
         <FinalCTA />
