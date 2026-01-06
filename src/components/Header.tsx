@@ -27,17 +27,20 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#bikes" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <a href="/#bikes" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               The Bikes
             </a>
-            <a href="#why-electric" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Why Electric
+            <a href="/test-ride" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Test Ride
             </a>
-            <a href="#savings" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Savings
+            <a href="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Journal
             </a>
-            <a href="#reviews" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              Reviews
+            <a href="/faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              FAQ
+            </a>
+            <a href="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              Contact
             </a>
           </nav>
 
@@ -64,17 +67,20 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <nav className="flex flex-col gap-4">
-              <a href="#bikes" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              <a href="/#bikes" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 The Bikes
               </a>
-              <a href="#why-electric" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Why Electric
+              <a href="/test-ride" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                Test Ride
               </a>
-              <a href="#savings" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Savings
+              <a href="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                Journal
               </a>
-              <a href="#reviews" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-                Reviews
+              <a href="/faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                FAQ
+              </a>
+              <a href="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                Contact
               </a>
               <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                 Build Your LEKI
