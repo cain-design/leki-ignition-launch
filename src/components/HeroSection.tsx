@@ -52,7 +52,7 @@ export function HeroSection() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-slide-up animation-delay-100">
             <span className="text-chrome">Real Motorcycle.</span>
             <br />
-            <span className="text-silver">To Commute.</span>
+            <span className="text-silver">Electric Commute.</span>
           </h1>
           
           {/* Subtitle - commute benefits */}
