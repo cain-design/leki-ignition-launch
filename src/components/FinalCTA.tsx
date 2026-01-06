@@ -1,8 +1,43 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Zap, Mail } from "lucide-react";
+import { Zap, Mail, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export function FinalCTA() {
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("klaviyo-subscribe", {
+        body: { 
+          email,
+          source: "website_footer",
+        },
+      });
+
+      if (error) throw error;
+
+      toast.success("You're in!", {
+        description: "Welcome to the LEKI community. Check your inbox soon.",
+      });
+      setEmail("");
+    } catch (error) {
+      console.error("Subscription error:", error);
+      toast.error("Subscription failed", {
+        description: "Please try again or contact us directly.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="py-24 bg-background relative overflow-hidden">
       {/* Background effects */}
@@ -46,14 +81,29 @@ export function FinalCTA() {
             <p className="text-muted-foreground mb-6">
               All things LEKI. Updates, tips, and exclusive offers. No spam. Ever.
             </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input 
                 type="email" 
                 placeholder="Enter your email" 
                 className="bg-secondary border-border"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={isLoading}
               />
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 whitespace-nowrap">
-                Subscribe
+              <Button 
+                type="submit"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 whitespace-nowrap"
+                disabled={isLoading}
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Subscribing...
+                  </>
+                ) : (
+                  "Subscribe"
+                )}
               </Button>
             </form>
           </div>
