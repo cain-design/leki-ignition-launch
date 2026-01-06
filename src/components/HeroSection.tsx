@@ -50,7 +50,7 @@ export function HeroSection() {
           
           {/* Main headline - commute focused */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-slide-up animation-delay-100">
-            <span className="text-chrome">The New Way</span>
+            <span className="text-chrome">Real Motorcycle.</span>
             <br />
             <span className="text-silver">To Commute.</span>
           </h1>
