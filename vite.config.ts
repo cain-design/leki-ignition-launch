@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => ({
   build:
     mode === "shopify"
       ? {
-          outDir: "shopify/assets",
+          outDir: "shopify",
           rollupOptions: {
             output: {
               entryFileNames: "assets/main.js",
