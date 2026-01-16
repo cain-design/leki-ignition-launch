@@ -71,3 +71,7 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Shopify upload readiness
+
+If you plan to upload this project to Shopify, use the Liquid theme in the `shopify/` directory and follow the packaging guide in `SHOPIFY_UPLOAD.md`.【F:SHOPIFY_UPLOAD.md†L1-L31】
