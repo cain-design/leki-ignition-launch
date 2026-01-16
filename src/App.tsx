@@ -12,6 +12,10 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Affiliate from "./pages/Affiliate";
 import Finance from "./pages/Finance";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import ShippingPolicy from "./pages/ShippingPolicy";
+import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +36,10 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/finance" element={<Finance />} />
+          <Route path="/policies/privacy" element={<PrivacyPolicy />} />
+          <Route path="/policies/terms" element={<Terms />} />
+          <Route path="/policies/shipping" element={<ShippingPolicy />} />
+          <Route path="/policies/refund" element={<RefundPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
