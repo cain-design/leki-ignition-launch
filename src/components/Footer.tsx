@@ -106,13 +106,23 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="/policies/privacy" className="text-muted-foreground hover:text-foreground transition-colors">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="/policies/terms" className="text-muted-foreground hover:text-foreground transition-colors">
                   Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a href="/policies/shipping" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Shipping Policy
+                </a>
+              </li>
+              <li>
+                <a href="/policies/refund" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Refunds & Returns
                 </a>
               </li>
             </ul>
