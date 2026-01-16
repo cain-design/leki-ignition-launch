@@ -1,0 +1,179 @@
+<section class="hero">
+  {% if section.settings.hero_video_url != blank %}
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="{{ section.settings.hero_video_url }}" type="video/mp4">
+    </video>
+  {% elsif section.settings.hero_image != blank %}
+    <img class="hero-image" src="{{ section.settings.hero_image | image_url: width: 2000 }}" alt="{{ section.settings.hero_image.alt | escape }}">
+  {% endif %}
+  <div class="hero-overlay"></div>
+  <div class="page-width hero-content">
+    <div class="hero-badge">{{ section.settings.hero_badge }}</div>
+    <h1 class="hero-title">
+      <span>{{ section.settings.hero_title_line_one }}</span><br>
+      <span class="hero-title-accent">{{ section.settings.hero_title_line_two }}</span>
+    </h1>
+    <p class="hero-subtitle">{{ section.settings.hero_subtitle }}</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="{{ section.settings.primary_cta_link }}">{{ section.settings.primary_cta_label }}</a>
+      <a class="button button-outline" href="{{ section.settings.secondary_cta_link }}">{{ section.settings.secondary_cta_label }}</a>
+    </div>
+    <div class="hero-trust">
+      {% for block in section.blocks %}
+        {% if block.type == 'trust_badge' %}
+          <div class="hero-trust-item">
+            <span class="hero-trust-value">{{ block.settings.value }}</span>
+            <span class="hero-trust-label">{{ block.settings.label }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="benefits-strip">
+  <div class="page-width benefits-grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'benefit' %}
+        <div class="benefit-card">
+          <div class="benefit-value">{{ block.settings.value }}</div>
+          <div class="benefit-label">{{ block.settings.label }}</div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="lineup">
+  <div class="page-width">
+    <div class="section-heading">
+      <p class="section-eyebrow">{{ section.settings.lineup_eyebrow }}</p>
+      <h2>{{ section.settings.lineup_title }}</h2>
+      <p class="section-subtitle">{{ section.settings.lineup_subtitle }}</p>
+    </div>
+    {% if section.settings.lineup_collection != blank %}
+      <div class="product-grid">
+        {% for product in collections[section.settings.lineup_collection].products limit: 2 %}
+          <div class="product-card">
+            <a href="{{ product.url }}">
+              {% if product.featured_image %}
+                <img src="{{ product.featured_image | image_url: width: 900 }}" alt="{{ product.title | escape }}">
+              {% endif %}
+            </a>
+            <div class="product-info">
+              <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+              <p>{{ product.description | strip_html | truncate: 140 }}</p>
+              <div class="product-meta">
+                <span class="price">{{ product.price | money }}</span>
+                <a class="button button-primary" href="{{ product.url }}">View Details</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="section-subtitle">Assign a collection to the homepage section to display products.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="video-showcase">
+  <div class="page-width">
+    <div class="section-heading">
+      <h2>{{ section.settings.video_title }}</h2>
+      <p class="section-subtitle">{{ section.settings.video_subtitle }}</p>
+    </div>
+    <div class="video-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'video' %}
+          <div class="video-card">
+            <video src="{{ block.settings.video_url }}" muted loop playsinline></video>
+            <div class="video-caption">{{ block.settings.title }}</div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="why-electric">
+  <div class="page-width">
+    <div class="section-heading">
+      <p class="section-eyebrow">{{ section.settings.why_eyebrow }}</p>
+      <h2>{{ section.settings.why_title }}</h2>
+      <p class="section-subtitle">{{ section.settings.why_subtitle }}</p>
+    </div>
+    <div class="why-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'why' %}
+          <div class="why-card">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.description }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="page-width">
+    <div class="final-cta-card">
+      <h2>{{ section.settings.cta_title }}</h2>
+      <p>{{ section.settings.cta_subtitle }}</p>
+      <a class="button button-primary" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Homepage - Lovable UI",
+  "settings": [
+    { "type": "text", "id": "hero_badge", "label": "Hero badge", "default": "ADR APPROVED • ROAD LEGAL • CHARGE AT HOME" },
+    { "type": "text", "id": "hero_title_line_one", "label": "Hero title line 1", "default": "A REAL MOTORBIKE." },
+    { "type": "text", "id": "hero_title_line_two", "label": "Hero title line 2", "default": "JUST ELECTRIC." },
+    { "type": "textarea", "id": "hero_subtitle", "label": "Hero subtitle", "default": "NO PETROL. NO GEARS. NO NOISE. Just twist and go from $7,999" },
+    { "type": "url", "id": "hero_video_url", "label": "Hero background video URL" },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero fallback image" },
+    { "type": "text", "id": "primary_cta_label", "label": "Primary CTA label", "default": "Build Your LEKI" },
+    { "type": "url", "id": "primary_cta_link", "label": "Primary CTA link" },
+    { "type": "text", "id": "secondary_cta_label", "label": "Secondary CTA label", "default": "Book a Test Ride" },
+    { "type": "url", "id": "secondary_cta_link", "label": "Secondary CTA link" },
+    { "type": "text", "id": "lineup_eyebrow", "label": "Lineup eyebrow", "default": "The Lineup" },
+    { "type": "text", "id": "lineup_title", "label": "Lineup title", "default": "Choose Your LEKI" },
+    { "type": "textarea", "id": "lineup_subtitle", "label": "Lineup subtitle", "default": "Two powerful options. Same incredible ride. Both road legal and LAMS approved." },
+    { "type": "collection", "id": "lineup_collection", "label": "Lineup collection" },
+    { "type": "text", "id": "video_title", "label": "Video title", "default": "See LEKI In Action" },
+    { "type": "textarea", "id": "video_subtitle", "label": "Video subtitle", "default": "Watch real riders experience the future of urban commuting." },
+    { "type": "text", "id": "why_eyebrow", "label": "Why eyebrow", "default": "The Electric Advantage" },
+    { "type": "text", "id": "why_title", "label": "Why title", "default": "Why Go Electric?" },
+    { "type": "textarea", "id": "why_subtitle", "label": "Why subtitle", "default": "It's not just about saving money. It's about a better riding experience." },
+    { "type": "text", "id": "cta_title", "label": "CTA title", "default": "Ready to ride electric?" },
+    { "type": "textarea", "id": "cta_subtitle", "label": "CTA subtitle", "default": "Get started today and build your LEKI." },
+    { "type": "text", "id": "cta_label", "label": "CTA button label", "default": "Build Your LEKI" },
+    { "type": "url", "id": "cta_link", "label": "CTA button link" }
+  ],
+  "blocks": [
+    { "type": "trust_badge", "name": "Hero trust badge", "settings": [
+      { "type": "text", "id": "value", "label": "Value", "default": "160km+" },
+      { "type": "text", "id": "label", "label": "Label", "default": "Range" }
+    ]},
+    { "type": "benefit", "name": "Benefit", "settings": [
+      { "type": "text", "id": "value", "label": "Value", "default": "160km+" },
+      { "type": "text", "id": "label", "label": "Label", "default": "Range. Done." }
+    ]},
+    { "type": "video", "name": "Video", "settings": [
+      { "type": "url", "id": "video_url", "label": "Video URL" },
+      { "type": "text", "id": "title", "label": "Title", "default": "City Commute" }
+    ]},
+    { "type": "why", "name": "Why card", "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "INSTANT TORQUE. SILENT PULL." },
+      { "type": "textarea", "id": "description", "label": "Description", "default": "Full torque from zero. Smooth, punchy acceleration. No revs. No waiting." }
+    ]}
+  ],
+  "presets": [
+    { "name": "Homepage - Lovable UI" }
+  ]
+}
+{% endschema %}

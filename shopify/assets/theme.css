@@ -16,6 +16,27 @@ a {
   padding: 24px;
 }
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.button-primary {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.button-outline {
+  border: 2px solid #1d4ed8;
+  color: #1d4ed8;
+  background: transparent;
+}
+
 .site-header {
   background: #0f172a;
   color: #f8fafc;
@@ -69,4 +90,243 @@ a {
 .rte p {
   line-height: 1.7;
   margin-bottom: 1rem;
+}
+
+.hero {
+  position: relative;
+  min-height: 80vh;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+}
+
+.hero-video,
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.hero-title-accent {
+  color: #93c5fd;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.hero-trust-item {
+  background: rgba(15, 23, 42, 0.5);
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+}
+
+.hero-trust-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.hero-trust-label {
+  font-size: 0.85rem;
+  color: rgba(248, 250, 252, 0.7);
+}
+
+.benefits-strip {
+  background: #e2e8f0;
+  padding: 24px 0;
+}
+
+.benefits-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  text-align: center;
+}
+
+.benefit-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.benefit-value {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #1d4ed8;
+}
+
+.benefit-label {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.section-subtitle {
+  color: #64748b;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.lineup,
+.video-showcase,
+.why-electric,
+.final-cta {
+  padding: 64px 0;
+}
+
+.product-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.product-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.price {
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.video-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.video-card {
+  background: #0f172a;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+}
+
+.video-card video {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.video-caption {
+  position: absolute;
+  bottom: 0;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.8));
+  width: 100%;
+}
+
+.why-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.why-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.final-cta-card {
+  background: #1d4ed8;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+}
+
+.final-cta-card p {
+  margin: 12px auto 24px;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.85);
 }
