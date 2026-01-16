@@ -1,6 +1,6 @@
 # Shopify Upload & Compliance Guide
 
-This project is a Vite + React storefront that includes the required Shopify policy pages and footer links. Follow the steps below to create a lightweight upload package and ensure compliance.
+This repo now includes a dedicated Shopify theme in the `shopify/` directory (Liquid templates, sections, and assets). Use that folder when uploading to Shopify to ensure compatibility.
 
 ## Compliance Checklist
 
@@ -21,20 +21,15 @@ This project is a Vite + React storefront that includes the required Shopify pol
    ```bash
    rm -rf dist dist-ssr
    ```
-3. Create your ZIP archive:
+3. Create your ZIP archive from the Shopify theme directory:
    ```bash
-   zip -r leki-shopify-upload.zip . -x "node_modules/*" -x "dist/*" -x "dist-ssr/*" -x ".git/*"
+   cd shopify
+   zip -r ../leki-shopify-upload.zip . -x ".git/*"
    ```
 
 ## Build & Deploy Notes
 
-- Run a production build locally before deploying:
-  ```bash
-  npm install
-  npm run build
-  ```
-- The production output is in the `dist/` folder.
-- For Shopify, you can upload or host the built assets using your preferred Shopify integration (e.g., hosting via a Shopify app, a custom theme integration, or an external hosting endpoint embedded in Shopify pages). Consult your Shopify setup to align with your deployment path.
+The Shopify upload should use the Liquid theme in `shopify/`. The Vite build output is not required for the theme upload.
 
 ## Update Policy Content
 

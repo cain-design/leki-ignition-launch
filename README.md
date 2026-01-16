@@ -74,4 +74,4 @@ Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/c
 
 ## Shopify upload readiness
 
-If you plan to upload this project to Shopify, review the lightweight packaging and compliance checklist in `SHOPIFY_UPLOAD.md`. It documents the required policy pages, footer links, and steps to keep the upload zip under 50MB.【F:SHOPIFY_UPLOAD.md†L1-L31】
+If you plan to upload this project to Shopify, use the Liquid theme in the `shopify/` directory and follow the packaging guide in `SHOPIFY_UPLOAD.md`.【F:SHOPIFY_UPLOAD.md†L1-L31】
