@@ -1,0 +1,31 @@
+{% schema %}
+{
+  "name": "App Root",
+  "settings": [
+    {
+      "type": "text",
+      "id": "app_title",
+      "label": "App title",
+      "default": "Welcome"
+    },
+    {
+      "type": "textarea",
+      "id": "app_description",
+      "label": "App description",
+      "default": "Customize this section in the Shopify theme editor."
+    }
+  ]
+}
+{% endschema %}
+
+<section data-app-root>
+  <header class="app-editor-header">
+    {% if section.settings.app_title != blank %}
+      <h1>{{ section.settings.app_title }}</h1>
+    {% endif %}
+    {% if section.settings.app_description != blank %}
+      <p>{{ section.settings.app_description }}</p>
+    {% endif %}
+  </header>
+  <div id="root"></div>
+</section>

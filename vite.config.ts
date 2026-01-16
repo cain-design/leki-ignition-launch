@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: mode === "shopify" ? "./" : undefined,
   server: {
     host: "::",
     port: 8080,
@@ -15,4 +16,22 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build:
+    mode === "shopify"
+      ? {
+          outDir: "shopify",
+          rollupOptions: {
+            output: {
+              entryFileNames: "assets/main.js",
+              chunkFileNames: "assets/[name].js",
+              assetFileNames: (assetInfo) => {
+                if (assetInfo.name?.endsWith(".css")) {
+                  return "assets/main.css";
+                }
+                return "assets/[name][extname]";
+              },
+            },
+          },
+        }
+      : undefined,
 }));
